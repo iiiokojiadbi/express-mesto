@@ -9,7 +9,7 @@ const getCards = (req, res) => getFile(path.join(__dirname, '..', 'data', 'cards
   }).catch((error) => {
     res
       .status(500)
-      .send({ message: `произошла ошибка ${error}` });
+      .send({ message: `Произошла ошибка ${error}` });
   });
 
 module.exports = {

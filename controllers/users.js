@@ -6,7 +6,7 @@ const getAllUsers = (req, res) => getFile(path.join(__dirname, '..', 'data', 'us
     .status(200)
     .send(JSON.parse(data))).catch((error) => res
     .status(500)
-    .send({ message: `произошла ошибка ${error}` }));
+    .send({ message: `Произошла ошибка ${error}` }));
 
 const getUser = (req, res) => {
   getFile(path.join(__dirname, '..', 'data', 'users.json')).then((data) => {
@@ -22,7 +22,7 @@ const getUser = (req, res) => {
   }).catch((error) => {
     res
       .status(500)
-      .send({ message: `произошла ошибка ${error}` });
+      .send({ message: `Произошла ошибка ${error}` });
   });
 };
 
