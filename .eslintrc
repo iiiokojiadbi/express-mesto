@@ -4,10 +4,9 @@
     "no-underscore-dangle": [
       "error",
       {
-        "allow": [
-          "_id"
-        ]
+        "allow": ["_id"]
       }
-    ]
+    ],
+    "no-restricted-globals": ["error", "event", "fdescribe"]
   }
 }
