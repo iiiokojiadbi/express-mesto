@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  console.log('show 404 page');
+  res.status(200).send('Нет такой страницы');
 });
 
 module.exports = router;

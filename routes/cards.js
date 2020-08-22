@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  console.log('show cards');
+  res.send('Все карточки');
 });
 
 module.exports = router;
