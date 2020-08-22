@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.get('/cards/', (req, res) => {
+router.get('/', (req, res) => {
   console.log('show cards');
 });
 
