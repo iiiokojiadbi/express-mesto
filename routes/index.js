@@ -1,9 +1,9 @@
-const userRouter = require('./users');
-const cardRouter = require('./cards');
+const usersRouter = require('./users');
+const cardsRouter = require('./cards');
 const notFoundRouter = require('./notFound');
 
 module.exports = {
-  userRouter,
-  cardRouter,
+  usersRouter,
+  cardsRouter,
   notFoundRouter,
 };

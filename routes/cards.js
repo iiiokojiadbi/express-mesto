@@ -1,7 +1,8 @@
-const router = require('express').Router();
+const express = require('express');
+const { getCards } = require('../controllers/cards.js');
 
-router.get('/', (req, res) => {
-  res.send('Все карточки');
-});
+const cardsRouter = express.Router();
 
-module.exports = router;
+cardsRouter.get('/', getCards);
+
+module.exports = cardsRouter;
