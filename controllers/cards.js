@@ -1,4 +1,5 @@
 const { Card } = require('../models');
+const { LIKE_OPTIONS } = require('../constants');
 
 const getAllCards = (req, res) => {
   Card.find({})
@@ -23,8 +24,40 @@ const deleteCard = (req, res) => {
     .catch((err) => res.status(500).send({ message: `Произошла ошибка ${err}` }));
 };
 
+const likeCard = (req, res) => {
+  const { cardId } = req.params;
+  const { _id } = req.user;
+
+  Card.findByIdAndUpdate(
+    cardId,
+    {
+      $addToSet: { likes: _id },
+    },
+    LIKE_OPTIONS,
+  )
+    .then((likes) => res.send({ data: likes }))
+    .catch((err) => res.status(500).send({ message: `Произошла ошибка ${err}` }));
+};
+
+const dislikeCard = (req, res) => {
+  const { cardId } = req.params;
+  const { _id } = req.user;
+
+  Card.findByIdAndUpdate(
+    cardId,
+    {
+      $pull: { likes: _id },
+    },
+    LIKE_OPTIONS,
+  )
+    .then((likes) => res.send({ data: likes }))
+    .catch((err) => res.status(500).send({ message: `Произошла ошибка ${err}` }));
+};
+
 module.exports = {
   getAllCards,
   createCard,
   deleteCard,
+  likeCard,
+  dislikeCard,
 };

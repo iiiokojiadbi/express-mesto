@@ -1,7 +1,10 @@
 const {
   getAllUsers, getUser, createUser, updateUser, updateUserAvatar,
 } = require('./users');
-const { getAllCards, createCard, deleteCard } = require('./cards');
+
+const {
+  getAllCards, createCard, deleteCard, likeCard, dislikeCard,
+} = require('./cards');
 
 module.exports = {
   getAllUsers,
@@ -12,4 +15,6 @@ module.exports = {
   getAllCards,
   createCard,
   deleteCard,
+  likeCard,
+  dislikeCard,
 };
