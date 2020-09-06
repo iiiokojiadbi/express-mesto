@@ -16,7 +16,7 @@ const getUser = (req, res, next) => {
     .then((userData) => res.send({ data: userData }))
     .catch((err) => createCustomError(
       err,
-      ERROR_MESSAGE.NOT_FOUND,
+      ERROR_MESSAGE.USER_NOT_FOUND,
       ERROR_CODE.NOT_FOUND,
     ))
     .catch(next);
