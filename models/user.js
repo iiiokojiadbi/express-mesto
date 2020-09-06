@@ -15,6 +15,8 @@ const userSchema = new mongoose.Schema({
   about: {
     type: String,
     required: true,
+    minlength: 2,
+    maxlength: 30,
     validate: {
       validator: (name) => validateText(name),
       message: 'Введите правильный текст',
